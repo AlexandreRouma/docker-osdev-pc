@@ -11,9 +11,6 @@ COPY .docker/patched_makepkg.conf /etc/makepkg.conf
 RUN useradd -m osdev && passwd -d osdev
 USER osdev
 
-# Expose local directory
-ADD . /home/osdev/code
-
 # Copy and run install scrip
 WORKDIR /home/osdev/
 COPY .docker/install.sh /home/osdev/install.sh
